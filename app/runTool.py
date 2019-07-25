@@ -4,6 +4,7 @@ import threading
 import andoridTool 
 import csv
 import os
+import asyncio
 #获取时间
 def getNowTime():
     #time=datetime.datetime.now().strftime(r'%Y%m%d%H%M%S')
@@ -47,18 +48,19 @@ async def run(frequency,packageName):
     TotalPss=andoridTool.getTotalPss(packageName)
     
     VssAndRss=andoridTool.getVssAndRss(packageName)
-    async if(cpu==None):
+    
+    if(cpu==None):
         cpu==0
 
-    async if(TotalPss==None):
+    if(TotalPss==None):
         TotalPss==0
 
-    async if(VssAndRss==None):
+    if(VssAndRss==None):
         VssAndRss==0
 
-    async lists=[str(getNowDate()),str(cpu),str(TotalPss),str(VssAndRss[0]),str(VssAndRss[1])]
-    async print(lists)
-    async setDataCSV(lists)
+    lists=[str(getNowDate()),str(cpu),str(TotalPss),str(VssAndRss[0]),str(VssAndRss[1])]
+    print(lists)
+    setDataCSV(lists)
     
     
 
