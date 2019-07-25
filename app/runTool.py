@@ -32,7 +32,7 @@ def setDataCSV(lists):
 
 
 #运行程序
-async def run(frequency,packageName):
+def run(frequency,packageName):
     '''
     frequency：刷新平次，秒
     packageName：应用包名
